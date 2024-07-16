@@ -1,0 +1,14 @@
+FROM python:3
+
+RUN mkdir -p /home/server
+
+WORKDIR /home/server
+
+COPY ./requirements.txt .
+COPY ./src/ .
+
+RUN pip install -r requirements.txt
+
+EXPOSE 8000
+
+CMD ["flask", "--app", "src/app", "run", "--debug", "--host=0.0.0.0", "--port=8000"]
