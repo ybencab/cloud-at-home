@@ -7,3 +7,4 @@ services:
       - "8000:8000"
     volumes:
       - ./server:/home/server
+      - ${HOME_STORAGE}:/home/data

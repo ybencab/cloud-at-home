@@ -1,6 +1,7 @@
 FROM python:3
 
 RUN mkdir -p /home/server
+RUN mkdir -p /home/data
 
 WORKDIR /home/server
 

@@ -1,5 +1,10 @@
 # CLOUD AT HOME
 
+> Serán necesario establecer el directorio local en el que se almacenarán los datos
+```
+$ export HOME_STORAGE="/home/user/example"
+```
+
 ## Desplegar el proyecto para producción
 ```
 $ docker compose up
