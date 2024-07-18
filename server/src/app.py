@@ -1,5 +1,4 @@
 from flask import Flask, send_from_directory, request
-from fileinput import filename
 
 import os
 
