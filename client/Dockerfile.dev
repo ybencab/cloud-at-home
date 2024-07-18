@@ -1,0 +1,13 @@
+FROM node:22
+
+RUN mkdir -p /home/client
+
+WORKDIR /home/client
+
+COPY package*.json .
+
+RUN npm install
+
+EXPOSE 8001
+
+CMD ["npm", "run", "start", "--", "--port", "8001", "--host", "0.0.0.0"]

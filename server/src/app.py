@@ -19,7 +19,7 @@ def get_file(filename):
   file_path = os.path.join(STORAGE_DIRECTORY, filename)
   if not os.path.exists(file_path):
     return "404 File Not Found", 404
-  
+
   try:
     return send_from_directory(STORAGE_DIRECTORY, filename, as_attachment=True)
   except Exception as e:
