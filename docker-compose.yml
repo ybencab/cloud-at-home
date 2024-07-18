@@ -8,3 +8,10 @@ services:
     volumes:
       - ./server:/home/server
       - ${HOME_STORAGE}:/home/data
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8001:80"

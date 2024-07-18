@@ -1,5 +1,5 @@
 services:
-  backend:
+  backend-dev:
     build: 
       context: ./server
       dockerfile: Dockerfile.dev
@@ -9,7 +9,7 @@ services:
       - ./server:/home/server
       - ${HOME_STORAGE}:/home/data
 
-  frontend:
+  frontend-dev:
     build:
       context: ./client
       dockerfile: Dockerfile.dev
