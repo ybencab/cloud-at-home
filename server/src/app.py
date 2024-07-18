@@ -1,4 +1,5 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request
+from fileinput import filename
 
 import os
 
@@ -24,6 +25,24 @@ def get_file(filename):
     return send_from_directory(STORAGE_DIRECTORY, filename, as_attachment=True)
   except Exception as e:
     return f"An error ocurred: {str(e)}", 500
+
+@app.route("/post-file", methods=["POST"])
+def post_file():
+  if "file" not in request.files:
+    return "No file part", 400
+  
+  f = request.files["file"]
+
+  if f.filename == "":
+    return "No selected file", 400
+  
+  save_path = os.path.join(STORAGE_DIRECTORY, f.filename)
+
+  if os.path.exists(save_path):
+    return f"File: {f.filename} already exists", 409
+  
+  f.save(save_path)
+  return f"file: '{f.filename}', saved", 201
 
 if __name__ == "__main__":
     app.run()
