@@ -1,8 +1,10 @@
 from flask import Flask, send_from_directory, request
+from flask_cors import CORS
 
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 STORAGE_DIRECTORY = "/home/data"
 
