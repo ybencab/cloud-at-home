@@ -17,5 +17,3 @@ services:
       - "8001:8001"
     volumes:
       - ./client:/home/client
-    environment:
-      - API_URL=http://backend-dev:8000
