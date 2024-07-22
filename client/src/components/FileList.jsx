@@ -24,6 +24,10 @@ export default function FileList() {
     fetchFiles();
   }, []);
 
+  const handleDownload = (filename) => {
+    window.location.href = `${API_URL}/get-file/${filename}`;
+  }
+
   return (
     <div>
       <h2>Files</h2>
@@ -32,7 +36,7 @@ export default function FileList() {
       ) : (
         <ul>
           {files.map((file, index) => (
-            <li key={index}>{file}</li>
+            <li key={index}>{file} - <button onClick={() => handleDownload(file)}>Download</button></li>
           ))}
         </ul>
       )}
