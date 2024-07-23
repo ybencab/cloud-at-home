@@ -27,7 +27,6 @@ export default function Files({ API_URL }) {
 
   return (
     <div>
-      <h2>{API_URL}</h2>
       <h1>Files</h1>
       <FileUpload API_URL={API_URL} onUpload={fetchFiles} />
       <FileList API_URL={API_URL} files={files} error={error} />

@@ -20,7 +20,6 @@ export default function FileList({ files, error, API_URL }) {
 
   return (
     <div>
-      <h2>{API_URL}</h2>
       <h2>Files</h2>
       {error ? (
         <p>Ha ocurrido un error: {error}</p>
