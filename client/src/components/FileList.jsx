@@ -26,7 +26,7 @@ export default function FileList() {
 
   const handleDownload = (filename) => {
     window.location.href = `${API_URL}/get-file/${filename}`;
-  }
+  };
 
   return (
     <div>

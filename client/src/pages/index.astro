@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FileList from '../components/FileList';
+import FileUpload from '../components/FileUpload';
 
 ---
 
@@ -8,5 +9,6 @@ import FileList from '../components/FileList';
 	<main>
 		<h1>Cloud At Home</span></h1>
 		<FileList client:load />
+		<FileUpload client:load />		
 	</main>
 </Layout>
