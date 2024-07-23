@@ -2,7 +2,7 @@ import { useState } from "preact/hooks";
 
 const API_URL = "http://localhost:8000"
 
-export default function FileUpload() {
+export default function FileUpload({ onUpload }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
 
@@ -30,7 +30,8 @@ export default function FileUpload() {
       });
 
       if (response.ok) {
-        setUploadStatus("File uploaded succesfully")
+        setUploadStatus("File uploaded succesfully");
+        onUpload();
       } else {
         setUploadStatus("Failed to upload file");
       }

@@ -1,14 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FileList from '../components/FileList';
-import FileUpload from '../components/FileUpload';
+import Files from '../components/Files';
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Cloud At Home</span></h1>
-		<FileList client:load />
-		<FileUpload client:load />		
+		<Files client:load />
 	</main>
 </Layout>
