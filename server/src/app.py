@@ -45,5 +45,17 @@ def post_file():
   f.save(save_path)
   return f"file: '{f.filename}', saved", 201
 
+@app.route("/remove-file/<string:filename>", methods=["DELETE"])
+def remove_file(filename):
+  file_path = os.path.join(STORAGE_DIRECTORY, filename)
+  if not os.path.exists(file_path):
+    return "404 File Not Found", 404
+  
+  try:
+    os.remove(file_path)
+    return f"File: '{filename} has been removed", 200
+  except Exception as e:
+    return f"An error ocurred: {str(e)}", 500
+
 if __name__ == "__main__":
     app.run()
