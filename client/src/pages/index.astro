@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Files from '../components/Files';
+import { API_URL } from '../utils/api'
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Cloud At Home</span></h1>
-		<Files client:load />
+		<Files API_URL={API_URL} client:load />
 	</main>
 </Layout>

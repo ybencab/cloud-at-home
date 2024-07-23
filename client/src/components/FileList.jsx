@@ -1,6 +1,4 @@
-const API_URL = "http://localhost:8000"
-
-export default function FileList({ files, error }) {
+export default function FileList({ files, error, API_URL }) {
   const handleDownload = (filename) => {
     window.location.href = `${API_URL}/get-file/${filename}`;
   };
@@ -22,6 +20,7 @@ export default function FileList({ files, error }) {
 
   return (
     <div>
+      <h2>{API_URL}</h2>
       <h2>Files</h2>
       {error ? (
         <p>Ha ocurrido un error: {error}</p>

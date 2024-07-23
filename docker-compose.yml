@@ -13,6 +13,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+      args:
+        - API_URL=${API_URL}
     ports:
       - "8001:80"
     

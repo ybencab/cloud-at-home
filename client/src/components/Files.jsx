@@ -2,9 +2,8 @@ import { useState, useEffect } from "preact/hooks"
 import FileList from "./FileList"
 import FileUpload from "./FileUpload"
 
-const API_URL = "http://localhost:8000";
 
-export default function Files() {
+export default function Files({ API_URL }) {
   const [files, setFiles] = useState([]);
   const [error, setError] = useState(null);
 
@@ -28,9 +27,10 @@ export default function Files() {
 
   return (
     <div>
+      <h2>{API_URL}</h2>
       <h1>Files</h1>
-      <FileUpload onUpload={fetchFiles} />
-      <FileList files={files} error={error} />
+      <FileUpload API_URL={API_URL} onUpload={fetchFiles} />
+      <FileList API_URL={API_URL} files={files} error={error} />
     </div>
   )
 }

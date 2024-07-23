@@ -1,8 +1,6 @@
 import { useState } from "preact/hooks";
 
-const API_URL = "http://localhost:8000"
-
-export default function FileUpload({ onUpload }) {
+export default function FileUpload({ onUpload, API_URL }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState("");
 
