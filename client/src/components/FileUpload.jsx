@@ -28,7 +28,6 @@ export default function FileUpload({ onUpload }) {
         method: "POST",
         body: formData,
       });
-
       if (response.ok) {
         setUploadStatus("File uploaded succesfully");
         onUpload();
