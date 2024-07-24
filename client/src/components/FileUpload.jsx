@@ -38,11 +38,20 @@ export default function FileUpload({ onUpload, API_URL }) {
   };
 
   return (
-    <di>
-      <h2>Upload File</h2>
-      <input type="file" onChange={handleFileChange}/>
-      <button onClick={handleUpload}>Upload</button>
-      {uploadStatus && <p>{uploadStatus}</p>}
-    </di>
+    <div>
+      <input 
+        type="file" 
+        class="block w-full mb-2 text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 focus:outline-none" 
+        onChange={handleFileChange}
+      />
+      <button 
+        type="button" 
+        class="text-white bg-blue-600 rounded-lg p-1 text-sm font-semibold"
+        onClick={handleUpload}
+      >
+        Upload
+      </button>
+      {uploadStatus && <p class="text-blue-300">{uploadStatus}</p>}
+    </div>
   );
 }

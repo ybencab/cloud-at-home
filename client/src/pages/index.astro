@@ -1,13 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Files from '../components/Files';
+import Header from '../components/Header.astro';
 import { API_URL } from '../utils/api'
 
+const title: string = "Cloud At Home"
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={title}>
 	<main>
-		<h1>Cloud At Home</span></h1>
+		<Header title={title} />
 		<Files API_URL={API_URL} client:load />
 	</main>
 </Layout>

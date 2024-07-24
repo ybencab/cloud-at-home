@@ -9,16 +9,16 @@ export default function Files({ API_URL }) {
 
   const fetchFiles = async () => {
     await fetch(`${API_URL}/content`)
-    .then(async response => {
-      let data = await response.json();
-      setFiles(data);
-      setError(null);
-    })
-    .catch(error => {
-      console.error("Fetch error: ", error);
-      setFiles([]);
-      setError(error.message);
-    });
+      .then(async response => {
+        let data = await response.json();
+        setFiles(data);
+        setError(null);
+      })
+      .catch(error => {
+        console.error("Fetch error: ", error);
+        setFiles([]);
+        setError(error.message);
+      });
   }
 
   useEffect(() => {
@@ -27,9 +27,12 @@ export default function Files({ API_URL }) {
 
   return (
     <div>
-      <h1>Files</h1>
-      <FileUpload API_URL={API_URL} onUpload={fetchFiles} />
-      <FileList API_URL={API_URL} files={files} error={error} />
+      <div class="m-2 p-2 bg-gray-600 rounded-lg">
+        <FileUpload API_URL={API_URL} onUpload={fetchFiles} />
+      </div>
+      <div>
+        <FileList API_URL={API_URL} files={files} error={error} />
+      </div>
     </div>
   )
 }
