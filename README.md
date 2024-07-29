@@ -5,6 +5,9 @@
 Este proyecto ha sido realizado con el fin de aprender a usar y familizarme con Docker y los contenedores. Otra de las motivaciones ha sido aprender Flask y crear una API sencilla. Finalmente, acabé realizando un frontend básico con Astro, Preact y Tailwind para que todo el mundo pudiese usar la aplicación sin necesidad de crear o añadir nada al proyecto. 
 Soy conocedor de los posibles fallos e imperfecciones del proyecto pero, como he dicho anteriornmente, la principal intención del mismo es el aprendizaje.
 
+## ¿Para qué sirve?
+Al establecer un directorio en la máquina host (la máquina en la que se ejecuta la aplicación), veremos en la interfaz web todos los archivos de dicho directorio. Además, todos los usuarios que se encuentren la misma red podrán subir archivos desde sus correspondientes dispositivos, eliminar los archivos que se encuentren en el directorio de la máquina host y descargarlos.
+
 ## Despliegue
 
 Será necesario establecer el directorio local en el que se almacenarán los datos
